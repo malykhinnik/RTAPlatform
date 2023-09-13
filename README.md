@@ -29,3 +29,4 @@ and product information.</br>
 
 # Assumptions 
 1. Redis will make snapshots of the dataset on disk. It will likely be an infrastructure question, and will not focus on it more. If it will be necessary, we can discuss how it can be implemented and why.</br>
+2. I will use REST as a standard for API because it's one of the most popular standards, and I don't see a reason for other types. For now, we have a straightforward API.
