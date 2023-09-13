@@ -34,12 +34,12 @@ and product information.</br>
 4. Before the CREATE operation for a new User, I will check the existence of this User by First and Last name and create only a new one.
 5. Before the CREATE operation for a new Product, I will check the existence of this Product by Name and create only a new one.
 6. I will use the Maven automation tool because I like it. But it's no prob to change it to Gradle if necessary.
-7. I will use Spring as a basic framework for the App because it is one of the most popular Java frameworks for now, and it's not a problem - to find developers with Spring experience. It's not a JEE :D
+7. I will use Spring as a basic framework for the App because it is one of the most popular Java frameworks for now, and it's OK - to find developers with Spring experience. It's not a JEE :D
 8. I will use a pkg structure a view like:</br>
    module > business entity (user, product) -> action (controller, service)</br>
    because in the future, it can be extracted into separate modules simply.
 9. I don't think about any PostgreSQL optimization because good indexing or partitioning needs actual data and user experience.
-10. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future. 
+10. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side. 
 
 # Test Run Requirements:
-1. For some test will necessary pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  
+1. For some tests, it will be necessary to pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  
