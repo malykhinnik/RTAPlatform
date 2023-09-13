@@ -33,3 +33,5 @@ and product information.</br>
 3. I will not add any constraints for DELETE operations and will clear all existing data. It can be changed in the future if necessary.
 4. Before the CREATE operation for a new User, I will check the existence of this User by First and Last name and create only a new one.
 5. Before the CREATE operation for a new Product, I will check the existence of this Product by Name and create only a new one.
+6. I will use the Maven automation tool because I like it. But it's no prob to change it to Gradle if necessary.
+7. I will use Spring as a basic framework for the App because it is one of the most popular Java frameworks for now, and it's not a problem - to find developers with Spring experience. It's not a JEE :D
