@@ -30,3 +30,6 @@ and product information.</br>
 # Assumptions 
 1. Redis will make snapshots of the dataset on disk. It will likely be an infrastructure question, and will not focus on it more. If it will be necessary, we can discuss how it can be implemented and why.</br>
 2. I will use REST as a standard for API because it's one of the most popular standards, and I don't see a reason for other types. For now, we have a straightforward API.
+3. I will not add any constraints for DELETE operations and will clear all existing data. It can be changed in the future if necessary.
+4. Before the CREATE operation for a new User, I will check the existence of this User by First and Last name and create only a new one.
+5. Before the CREATE operation for a new Product, I will check the existence of this Product by Name and create only a new one.
