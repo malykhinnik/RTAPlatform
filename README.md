@@ -2,7 +2,7 @@
 The backend for a Real-Time Analytics platform.<br/>
 The platform collects user interactions from various sources, processes the data, and provides real-time analytics for users.</br>
 
-# Requirements:
+# App Requirements:
 1. Data Collection:</br>
 • Assume you have a Kafka cluster to ingest user interaction data from multiple
 sources (e.g., website, mobile app).</br>
@@ -38,3 +38,8 @@ and product information.</br>
 8. I will use a pkg structure a view like:</br>
    module > business entity (user, product) -> action (controller, service)</br>
    because in the future, it can be extracted into separate modules simply.
+9. I don't think about any PostgreSQL optimization because good indexing or partitioning needs actual data and user experience.
+10. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future. 
+
+# Test Run Requirements:
+1. For some test will necessary pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  

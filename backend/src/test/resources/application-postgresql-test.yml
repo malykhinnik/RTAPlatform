@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15.4:///test_database
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    baselineOnMigrate: true

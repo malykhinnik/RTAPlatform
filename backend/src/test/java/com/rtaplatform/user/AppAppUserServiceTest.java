@@ -7,33 +7,33 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static com.rtaplatform.user.Constants.USER_FIRST_NAME;
+import static com.rtaplatform.user.Constants.USER_LAST_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
-    private static final String USER_FIRST_NAME = "TestUserFirstName";
-    private static final String USER_LAST_NAME = "TestUserLastName";
+public class AppAppUserServiceTest {
     @Mock
-    private UserRepository userRepository;
-    private UserService userService;
+    private AppUserRepository appUserRepository;
+    private AppUserService appUserService;
 
     @BeforeEach
     public void before() {
-        userService = new UserService(userRepository);
+        appUserService = new AppUserService(appUserRepository);
     }
 
     @Test
     public void whenCreateNonUniqueUserThenException() {
-        Mockito.when(userRepository.existingUserByFirstNameAndLastName(USER_FIRST_NAME, USER_LAST_NAME))
+        Mockito.when(appUserRepository.existsAppUserByFirstNameAndLastName(USER_FIRST_NAME, USER_LAST_NAME))
                 .thenReturn(true);
 
-        User user = User.builder()
+        final AppUser appUser = AppUser.builder()
                 .firstName(USER_FIRST_NAME)
                 .lastName(USER_LAST_NAME)
                 .build();
 
-        Exception exception = assertThrows(UserCreateException.class, () -> userService.create(user));
+        Exception exception = assertThrows(AppUserCreateException.class, () -> appUserService.create(appUser));
         assertEquals("User exist", exception.getMessage());
     }
 }

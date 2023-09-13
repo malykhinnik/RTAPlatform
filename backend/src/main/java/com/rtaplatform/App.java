@@ -1,11 +1,11 @@
 package com.rtaplatform;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        System.out.println(health());
-    }
-
-    public static String health() {
-        return "RTAPlatform start ...";
+        SpringApplication.run(App.class, args);
     }
 }
