@@ -14,15 +14,18 @@ the appropriate Kafka topic.</br>
 3. Real-time Analytics:</br>
 • Design and implement a real-time analytics engine that aggregates and
 computes various metrics based on the processed data stored in Redis.</br>
-• Metrics could include things like user engagement, popular products, or event
+• Metrics could include user engagement, popular products, or event
 frequencies.</br>
 4. Database Integration:</br>
 • Set up a PostgreSQL database to store additional metadata, such as user profiles
 and product information.</br>
 • Implement CRUD operations for managing user profiles and product data.</br>
 5. User Flow and APIs:</br>
-• Design and implement APIs to expose the real-time analytics to users.</br>
+• Design and implement APIs to expose real-time analytics to users.</br>
 • Users should be able to query for specific metrics or receive real-time updates.</br>
 
 # Documentations:
 [Database ER diagram](https://lucid.app/lucidchart/68c820c6-1d15-41d1-8175-470b36cdefe0/edit?viewport_loc=-324%2C-22%2C3304%2C1559%2C0_0&invitationId=inv_a20b2be9-e6ee-4ddb-ac7f-4a5d4b671769)</br>
+
+# Assumptions 
+1. Redis will make snapshots of the dataset on disk. It will likely be an infrastructure question, and will not focus on it more. If it will be necessary, we can discuss how it can be implemented and why.</br>
