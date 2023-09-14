@@ -1,0 +1,20 @@
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5455/test_database"
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baselineOnMigrate: true
+  kafka:
+    bootstrap-servers: "localhost:9092,another-host.com:29092"
+    topic:
+      name: "rtaplatform-kafka-topic"
+    consumer:
+      auto-offset-reset: earliest
+      group-id: "rtaplatform-kafka-consumer"
