@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 @Component
 @Getter
 public class KafkaConsumer {
-    private CountDownLatch latch = new CountDownLatch(1);
+    private final CountDownLatch latch = new CountDownLatch(1);
     private String message;
 
     @KafkaListener(topics = "${spring.kafka.topic.name}")
