@@ -1,7 +1,8 @@
 package com.rtaplatform.kafka;
 
-import com.rtaplatform.kafka.processing.KafkaConsumer;
-import com.rtaplatform.kafka.produce.KafkaProducer;
+import com.rtaplatform.kafka.user_interaction.processing.KafkaConsumer;
+import com.rtaplatform.kafka.user_interaction.dto.UserInteractionMessage;
+import com.rtaplatform.kafka.user_interaction.produce.KafkaProducer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import java.util.concurrent.TimeUnit;
 
 import static com.rtaplatform.kafka.KafkaTestConstants.KAFKA_VALID_MESSAGE;
+import static com.rtaplatform.kafka.KafkaTestConstants.KAFKA_VALID_USER_INTERACTION;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -28,6 +30,7 @@ public class KafkaTest {
     public void whenSendingthenMessageReceived() throws InterruptedException {
         producer.sendMessage(KAFKA_VALID_MESSAGE);
         assertTrue(consumer.getLatch().await(10, TimeUnit.SECONDS));
-        assertEquals(KAFKA_VALID_MESSAGE, consumer.getMessage());
+        final UserInteractionMessage res = consumer.getUserInteractionMessage();
+        assertEquals(KAFKA_VALID_USER_INTERACTION, res);
     }
 }

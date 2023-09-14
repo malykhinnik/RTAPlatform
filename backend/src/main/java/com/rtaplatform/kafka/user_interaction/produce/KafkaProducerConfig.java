@@ -1,4 +1,4 @@
-package com.rtaplatform.kafka.produce;
+package com.rtaplatform.kafka.user_interaction.produce;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
