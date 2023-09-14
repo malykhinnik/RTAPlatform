@@ -1,5 +1,6 @@
-package com.rtaplatform.user;
+package com.rtaplatform.database.app_user;
 
+import com.rtaplatform.app_user.entity.AppUser;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Optional;
 
-import static com.rtaplatform.user.Constants.*;
+import static com.rtaplatform.app_user.Constants.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -41,10 +42,11 @@ public class AppAppUserRepositoryTest {
 
     @Test
     public void readUser() {
-        final AppUser appUser = appUserRepository.save(AppUser.builder()
-                .firstName(USER_FIRST_NAME)
-                .lastName(USER_LAST_NAME)
-                .build());
+        final AppUser appUser = appUserRepository.save(
+                AppUser.builder()
+                        .firstName(USER_FIRST_NAME)
+                        .lastName(USER_LAST_NAME)
+                        .build());
 
         final Optional<AppUser> oFindedUser = appUserRepository.findById(appUser.getId());
         assertTrue(oFindedUser.isPresent());
@@ -58,12 +60,18 @@ public class AppAppUserRepositoryTest {
 
     @Test
     public void updateUser() {
-        final AppUser appUser = appUserRepository.save(AppUser.builder()
-                .firstName(USER_FIRST_NAME)
-                .lastName(USER_LAST_NAME)
-                .build());
-        appUser.updateFirstName(NEW_USER_FIRST_NAME);
-        final AppUser updatedAppUser = appUserRepository.save(appUser);
+        final AppUser appUser = appUserRepository.save(
+                AppUser.builder()
+                        .firstName(USER_FIRST_NAME)
+                        .lastName(USER_LAST_NAME)
+                        .build());
+        final AppUser updatedAppUser = appUserRepository.save(
+                appUser.update(
+                        AppUser.builder()
+                                .firstName(NEW_USER_FIRST_NAME)
+                                .lastName(appUser.getLastName())
+                                .build())
+        );
         assertEquals(appUser.getId(), updatedAppUser.getId());
         assertEquals(appUser.getCreated(), updatedAppUser.getCreated());
         assertTrue(appUser.getUpdated().isBefore(updatedAppUser.getUpdated()));
@@ -73,10 +81,11 @@ public class AppAppUserRepositoryTest {
 
     @Test
     public void deleteUser() {
-        final AppUser appUser = appUserRepository.save(AppUser.builder()
-                .firstName(USER_FIRST_NAME)
-                .lastName(USER_LAST_NAME)
-                .build());
+        final AppUser appUser = appUserRepository.save(
+                AppUser.builder()
+                        .firstName(USER_FIRST_NAME)
+                        .lastName(USER_LAST_NAME)
+                        .build());
         appUserRepository.deleteById(appUser.getId());
         final Optional<AppUser> oFindedUser = appUserRepository.findById(appUser.getId());
         assertTrue(oFindedUser.isEmpty());

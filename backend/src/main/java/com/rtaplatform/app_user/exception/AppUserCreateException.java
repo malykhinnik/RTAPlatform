@@ -1,9 +1,9 @@
-package com.rtaplatform.user;
+package com.rtaplatform.app_user.exception;
 
 public class AppUserCreateException extends RuntimeException {
     private static final String USER_EXIST_MESSAGE = "User exist";
 
-    private AppUserCreateException(String message) {
+    private AppUserCreateException(final String message) {
         super(message);
     }
 

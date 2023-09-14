@@ -1,4 +1,4 @@
-package com.rtaplatform.user;
+package com.rtaplatform.app_user.entity;
 
 
 import jakarta.persistence.*;
@@ -16,25 +16,30 @@ import java.time.temporal.ChronoUnit;
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     private LocalDateTime created;
     private LocalDateTime updated;
+    @With
     private String firstName;
+    @With
     private String lastName;
 
     @PrePersist
-    public void setCreatedAndUpdatedNow() {
+    private void setCreatedAndUpdatedNow() {
         created = getDateTimeNowTruncatedToMillis();
         updated = getDateTimeNowTruncatedToMillis();
     }
 
     @PreUpdate
-    public void setUpdatedNow() {
+    private void setUpdatedNow() {
         updated = getDateTimeNowTruncatedToMillis();
     }
 
-    public void updateFirstName(String newFirstName) {
-        firstName = newFirstName;
+    public AppUser update(final AppUser appUser) {
+
+        return this
+                .withFirstName(appUser.getFirstName())
+                .withLastName(appUser.getLastName());
     }
 
     private LocalDateTime getDateTimeNowTruncatedToMillis() {
