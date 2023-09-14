@@ -2,7 +2,7 @@ package com.rtaplatform.app_user;
 
 import com.rtaplatform.app_user.entity.AppUser;
 import com.rtaplatform.app_user.exception.AppUserCreateException;
-import com.rtaplatform.database.app_user.AppUserRepository;
+import com.rtaplatform.postgresql.app_user.AppUserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

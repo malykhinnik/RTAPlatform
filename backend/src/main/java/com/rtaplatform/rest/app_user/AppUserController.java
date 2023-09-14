@@ -39,16 +39,16 @@ public class AppUserController {
 
     @GetMapping()
     public Page<AppUserResponse> getAppUsers(@RequestParam(defaultValue = DEFAULT_PAGE) final Integer page,
-                                              @RequestParam(defaultValue = DEFAULT_SIZE) final Integer size,
-                                              @RequestParam(defaultValue = DEFAULT_SORT_DIR) final String sortDir,
-                                              @RequestParam(defaultValue = "firstName") final String sortBy) {
+                                             @RequestParam(defaultValue = DEFAULT_SIZE) final Integer size,
+                                             @RequestParam(defaultValue = DEFAULT_SORT_DIR) final String sortDir,
+                                             @RequestParam(defaultValue = "firstName") final String sortBy) {
         return appUserService.getAppUsers(createPageRequest(page, size, sortDir, sortBy))
                 .map(AppUserResponse::convertToDto);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<AppUserResponse> updateAppUser(@PathVariable("id") final Long id,
-                                                          @RequestBody final AppUserRequest request) {
+                                                         @RequestBody final AppUserRequest request) {
         return appUserService.updateAppUser(id, request.convertToEntity())
                 .map(AppUserResponse::convertToDto)
                 .map(ResponseEntity::ok)

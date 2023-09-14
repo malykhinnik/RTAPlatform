@@ -1,4 +1,4 @@
-package com.rtaplatform.database.app_user;
+package com.rtaplatform.postgresql.app_user;
 
 import com.rtaplatform.app_user.entity.AppUser;
 import org.junit.jupiter.api.AfterEach;

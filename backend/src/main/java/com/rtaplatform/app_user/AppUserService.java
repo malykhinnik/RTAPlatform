@@ -2,7 +2,7 @@ package com.rtaplatform.app_user;
 
 import com.rtaplatform.app_user.entity.AppUser;
 import com.rtaplatform.app_user.exception.AppUserCreateException;
-import com.rtaplatform.database.app_user.AppUserRepository;
+import com.rtaplatform.postgresql.app_user.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
