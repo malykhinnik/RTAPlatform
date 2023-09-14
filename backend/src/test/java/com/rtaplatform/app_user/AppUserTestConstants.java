@@ -2,7 +2,7 @@ package com.rtaplatform.app_user;
 
 import java.time.LocalDateTime;
 
-public class Constants {
+public class AppUserTestConstants {
     public static final Long USER_ID = 1L;
     public static final LocalDateTime CREATED = LocalDateTime.now();
     public static final String USER_FIRST_NAME = "TestUserFirstName";

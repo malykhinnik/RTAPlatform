@@ -10,8 +10,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static com.rtaplatform.app_user.Constants.USER_FIRST_NAME;
-import static com.rtaplatform.app_user.Constants.USER_LAST_NAME;
+import static com.rtaplatform.app_user.AppUserTestConstants.USER_FIRST_NAME;
+import static com.rtaplatform.app_user.AppUserTestConstants.USER_LAST_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

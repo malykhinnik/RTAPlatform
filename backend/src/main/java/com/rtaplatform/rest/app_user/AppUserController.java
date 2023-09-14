@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.rtaplatform.rest.Constants.*;
+import static com.rtaplatform.rest.RestConstants.*;
 import static com.rtaplatform.rest.Utils.createPageRequest;
 
 @RestController("app-users")

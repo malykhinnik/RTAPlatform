@@ -25,7 +25,7 @@ and product information.</br>
 • Users should be able to query for specific metrics or receive real-time updates.</br>
 
 # Documentations:
-[Database ER diagram](https://lucid.app/lucidchart/68c820c6-1d15-41d1-8175-470b36cdefe0/edit?viewport_loc=-324%2C-22%2C3304%2C1559%2C0_0&invitationId=inv_a20b2be9-e6ee-4ddb-ac7f-4a5d4b671769)</br>
+[Data Flow and ER diagrams](https://lucid.app/lucidchart/68c820c6-1d15-41d1-8175-470b36cdefe0/edit?viewport_loc=-324%2C-22%2C3304%2C1559%2C0_0&invitationId=inv_a20b2be9-e6ee-4ddb-ac7f-4a5d4b671769)</br>
 
 # Assumptions and explanations 
 1. Redis will make snapshots of the dataset on disk. It will likely be an infrastructure question, and will not focus on it more. If it will be necessary, we can discuss how it can be implemented and why.</br>
@@ -36,7 +36,8 @@ and product information.</br>
 6. I will use the Maven automation tool because I like it. But it's no prob to change it to Gradle if necessary.
 7. I will use Spring as a basic framework for the App because it is one of the most popular Java frameworks for now, and it's not a problem - to find developers with Spring experience. It's not a JEE :D
 8. I don't think about any PostgreSQL optimization because good indexing or partitioning needs actual data and user experience.
-9. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future. 
+9. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future.
+10. I will guess what we use only one timezone and I can save a data without timezone
 
 # Test Run Requirements:
 1. For some tests, it will be necessary to pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  

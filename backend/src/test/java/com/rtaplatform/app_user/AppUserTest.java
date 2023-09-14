@@ -3,7 +3,7 @@ package com.rtaplatform.app_user;
 import com.rtaplatform.app_user.entity.AppUser;
 import org.junit.jupiter.api.Test;
 
-import static com.rtaplatform.app_user.Constants.*;
+import static com.rtaplatform.app_user.AppUserTestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppUserTest {

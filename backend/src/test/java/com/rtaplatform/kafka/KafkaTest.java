@@ -10,6 +10,7 @@ import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.rtaplatform.kafka.KafkaTestConstants.KAFKA_VALID_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,9 +26,8 @@ public class KafkaTest {
 
     @Test
     public void whenSendingthenMessageReceived() throws InterruptedException {
-        final String message = "test message";
-        producer.sendMessage(message);
+        producer.sendMessage(KAFKA_VALID_MESSAGE);
         assertTrue(consumer.getLatch().await(10, TimeUnit.SECONDS));
-        assertEquals(message, consumer.getMessage());
+        assertEquals(KAFKA_VALID_MESSAGE, consumer.getMessage());
     }
 }

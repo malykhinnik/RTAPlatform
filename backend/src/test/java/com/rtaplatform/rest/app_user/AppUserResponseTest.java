@@ -4,7 +4,7 @@ import com.rtaplatform.app_user.entity.AppUser;
 import com.rtaplatform.rest.app_user.dto.AppUserResponse;
 import org.junit.jupiter.api.Test;
 
-import static com.rtaplatform.app_user.Constants.*;
+import static com.rtaplatform.app_user.AppUserTestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppUserResponseTest {

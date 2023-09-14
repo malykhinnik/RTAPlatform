@@ -4,8 +4,8 @@ import com.rtaplatform.app_user.entity.AppUser;
 import com.rtaplatform.rest.app_user.dto.AppUserRequest;
 import org.junit.jupiter.api.Test;
 
-import static com.rtaplatform.app_user.Constants.USER_FIRST_NAME;
-import static com.rtaplatform.app_user.Constants.USER_LAST_NAME;
+import static com.rtaplatform.app_user.AppUserTestConstants.USER_FIRST_NAME;
+import static com.rtaplatform.app_user.AppUserTestConstants.USER_LAST_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppUserRequestTest {

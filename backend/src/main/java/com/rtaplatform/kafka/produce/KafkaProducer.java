@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
+
+import static com.rtaplatform.kafka.KafkaUtils.isValidMessage;
 
 @Slf4j
 @Component
@@ -20,8 +21,8 @@ public class KafkaProducer {
     }
 
     public void sendMessage(final String message) {
-        if (!StringUtils.hasLength(message)) {
-            log.info("empty message to topic='{}'", kafkaTopicName);
+        if (!isValidMessage(message)) {
+            log.info("Not valid message='{}' to topic='{}", message, kafkaTopicName);
             return;
         }
 
