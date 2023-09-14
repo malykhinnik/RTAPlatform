@@ -1,4 +1,4 @@
-package com.rtaplatform.data.produce;
+package com.rtaplatform.kafka.produce;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

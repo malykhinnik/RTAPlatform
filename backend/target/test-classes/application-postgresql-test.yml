@@ -14,3 +14,6 @@ spring:
     consumer:
       auto-offset-reset: earliest
       group-id: "rtaplatform-kafka-consumer"
+  redis:
+    host: "127.0.0.1"
+    port: 6379

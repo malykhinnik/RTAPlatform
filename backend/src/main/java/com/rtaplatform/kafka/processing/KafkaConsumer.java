@@ -1,4 +1,4 @@
-package com.rtaplatform.data.processing;
+package com.rtaplatform.kafka.processing;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

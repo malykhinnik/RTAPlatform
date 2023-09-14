@@ -1,144 +1,144 @@
 {
-	"info": {
-		"_postman_id": "47ff2d91-02e1-4657-8f7f-10a3d7a50380",
-		"name": "RTAPlatform",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "3171977"
-	},
-	"item": [
-		{
-			"name": "app-users",
-			"item": [
-				{
-					"name": "getAppUsers",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/app-users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"app-users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAppUser",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/app-users/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"app-users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateAppUser",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"newTestUserFirstName\",\r\n    \"lastName\": \"testUserLastName\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/app-users/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"app-users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteAppUser",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/app-users/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"app-users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "createAppUser",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\":\"testUserFirstName\",\r\n    \"lastName\":\"testUserLastName\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/app-users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"app-users"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "data-collection",
-			"item": [
-				{
-					"name": "sendMessage",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "47ff2d91-02e1-4657-8f7f-10a3d7a50380",
+    "name": "RTAPlatform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3171977"
+  },
+  "item": [
+    {
+      "name": "app-users",
+      "item": [
+        {
+          "name": "getAppUsers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/app-users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "app-users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAppUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/app-users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "app-users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateAppUser",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"newTestUserFirstName\",\r\n    \"lastName\": \"testUserLastName\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/app-users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "app-users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteAppUser",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/app-users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "app-users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createAppUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\":\"testUserFirstName\",\r\n    \"lastName\":\"testUserLastName\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/app-users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "app-users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "data-collection",
+      "item": [
+        {
+          "name": "sendMessage",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }

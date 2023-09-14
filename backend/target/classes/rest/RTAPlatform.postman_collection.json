@@ -126,6 +126,19 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "data-collection",
+      "item": [
+        {
+          "name": "sendMessage",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }

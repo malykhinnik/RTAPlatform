@@ -1,7 +1,7 @@
-package com.rtaplatform.data;
+package com.rtaplatform.kafka;
 
-import com.rtaplatform.data.processing.KafkaConsumer;
-import com.rtaplatform.data.produce.KafkaProducer;
+import com.rtaplatform.kafka.processing.KafkaConsumer;
+import com.rtaplatform.kafka.produce.KafkaProducer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
