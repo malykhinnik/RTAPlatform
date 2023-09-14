@@ -21,8 +21,4 @@ public class KafkaConsumer {
         message = consumerRecord.value();
         latch.countDown();
     }
-
-    public void resetLatch() {
-        latch = new CountDownLatch(1);
-    }
 }
