@@ -39,7 +39,7 @@ and product information.</br>
 9. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future. 
 
 # Test Run Requirements:
-1. For some test will necessary pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.
+1. For some tests, it will be necessary to pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  
 
 # App Run Requirements:
 For runing docker img of Postgre you can use next command <br>
