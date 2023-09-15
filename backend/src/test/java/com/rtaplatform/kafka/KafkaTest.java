@@ -1,8 +1,8 @@
 package com.rtaplatform.kafka;
 
 import com.rtaplatform.kafka.user_interaction.message.UserInteractionMessage;
-import com.rtaplatform.kafka.user_interaction.processing.KafkaConsumer;
-import com.rtaplatform.kafka.user_interaction.produce.KafkaProducer;
+import com.rtaplatform.kafka.user_interaction.consumer.KafkaConsumer;
+import com.rtaplatform.kafka.user_interaction.producer.KafkaProducer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.rtaplatform.kafka.user_interaction.processing;
+package com.rtaplatform.kafka.user_interaction.consumer;
 
 import com.rtaplatform.kafka.user_interaction.message.UserInteractionMessage;
 import com.rtaplatform.user_interaction.UserInteractionService;

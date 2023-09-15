@@ -1,6 +1,6 @@
 package com.rtaplatform.rest.data.collection;
 
-import com.rtaplatform.kafka.user_interaction.produce.KafkaProducer;
+import com.rtaplatform.kafka.user_interaction.producer.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

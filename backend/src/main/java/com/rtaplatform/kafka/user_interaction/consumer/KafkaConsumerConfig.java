@@ -1,4 +1,4 @@
-package com.rtaplatform.kafka.user_interaction.processing;
+package com.rtaplatform.kafka.user_interaction.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

@@ -1,4 +1,4 @@
-package com.rtaplatform.kafka.user_interaction.produce;
+package com.rtaplatform.kafka.user_interaction.producer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
