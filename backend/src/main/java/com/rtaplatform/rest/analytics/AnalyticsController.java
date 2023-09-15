@@ -18,12 +18,12 @@ public class AnalyticsController {
     }
 
     @GetMapping("middle-user-engagement")
-    public Long middleUserEngagement(@RequestParam final Long productId) {
+    public Long middleUserEngagement(@RequestParam(name="product-id") final Long productId) {
         return analyticsService.middleUserEngagement(productId);
     }
 
     @GetMapping("number-of-unique-users")
-    public Long numberOfUniqueUsers(@RequestParam final Long productId) {
+    public Long numberOfUniqueUsers(@RequestParam(name="product-id") final Long productId) {
         return analyticsService.numberOfUniqueUsers(productId);
     }
 }

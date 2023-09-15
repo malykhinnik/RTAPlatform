@@ -50,3 +50,5 @@ For runing docker img of Postgre you can use next command <br>
 <code>docker run --rm --name RTAPlatformPostgresDb -p 5455:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=test_database -d postgres</code><br>
 For runing docker img of Kafka without Zookeeper you can use <br>
 <code>docker run --rm --name RTAPlatformKafkaWithoutZookeeper  -p 9092:9092 -d bashj79/kafka-kraft</code><br>
+For runing docker img of Redis you can use <br>
+<code>docker run --rm --name RTAPlatformRedis -p 6379:6379 -d redis</code><br>
