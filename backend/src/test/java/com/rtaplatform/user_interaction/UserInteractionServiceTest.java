@@ -32,7 +32,7 @@ public class UserInteractionServiceTest {
                 .thenReturn(LIST_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_1);
 
         List<UserInteraction> userInteractionsByProduct1 = userInteractionService.listUsersByProduct(PRODUCT_ID_1);
-        assertEquals(N_OF_USERS_BY_PRODUCT_ID_1, userInteractionsByProduct1.size());
+        assertEquals(N_OF_UNIQUE_USERS_BY_PRODUCT_ID_1, userInteractionsByProduct1.size());
         List<UserInteraction> userInteractionsByProduct2 = userInteractionService.listUsersByProduct(PRODUCT_ID_2);
         assertEquals(0, userInteractionsByProduct2.size());
     }

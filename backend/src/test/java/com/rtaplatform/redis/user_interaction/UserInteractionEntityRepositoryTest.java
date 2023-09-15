@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserInteractionEntityRepositoryTest {
     @Container
     public static final GenericContainer<?> REDIS_CONTAINER = new GenericContainer<>(DockerImageName.parse("redis:7.2.1"))
-                .withExposedPorts(REDIS_PORT);
+            .withExposedPorts(REDIS_PORT);
 
     @Autowired
     public UserInteractionEntityRepository userInteractionEntityRepository;
@@ -87,10 +87,10 @@ public class UserInteractionEntityRepositoryTest {
     @Test
     public void findAllInteractionsByProduct() {
         LIST_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_1.forEach(uie -> userInteractionEntityRepository.save(uie));
-        assertEquals(N_OF_USERS_BY_PRODUCT_ID_1, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_1).size());
+        assertEquals(N_OF_UNIQUE_USERS_BY_PRODUCT_ID_1, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_1).size());
         assertEquals(0, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_2).size());
 
-        LIST_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_2.forEach(uie -> userInteractionEntityRepository.save(uie));
-        assertEquals(N_OF_USERS_BY_PRODUCT_ID_2, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_2).size());
+        LIST_UNIQUE_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_2.forEach(uie -> userInteractionEntityRepository.save(uie));
+        assertEquals(N_OF_UNIQUE_USERS_BY_PRODUCT_ID_2, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_2).size());
     }
 }

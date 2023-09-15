@@ -24,7 +24,7 @@ public class AnalyticsService {
      * @param productId ID of the product
      * @return the value of the calculation rounded to the nearest long value.
      */
-    public Long countMiddleUserEngagementByProduct(Long productId) {
+    public Long middleUserEngagement(Long productId) {
         double sumTimeSec = 0.;
         Set<Long> uniqueUsersId = new HashSet<>();
         for (UserInteraction userInteraction : userInteractionService.listUsersByProduct(productId)) {
@@ -41,7 +41,7 @@ public class AnalyticsService {
      * @param productId ID of the product
      * @return the value of the calculation
      */
-    public Long countUniqueUsersByProduct(Long productId) {
+    public Long numberOfUniqueUsers(Long productId) {
         return userInteractionService.streamUsersByProduct(productId)
                 .map(UserInteraction::getUserId)
                 .distinct()
