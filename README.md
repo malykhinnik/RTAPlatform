@@ -45,6 +45,6 @@ and product information.</br>
 
 # App Run Requirements:
 For runing docker img of Postgre you can use next command <br>
-<code>docker run --name RTAPlatformPostgresDb -p 5455:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=test_database -d postgres</code><br>
+<code>docker run --rm --name RTAPlatformPostgresDb -p 5455:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=test_database -d postgres</code><br>
 For runing docker img of Kafka without Zookeeper you can use <br>
-<code>docker run --name RTAPlatformKafkaWithoutZookeeper  -p 9092:9092 -d bashj79/kafka-kraft</code><br>
+<code>docker run --rm --name RTAPlatformKafkaWithoutZookeeper  -p 9092:9092 -d bashj79/kafka-kraft</code><br>

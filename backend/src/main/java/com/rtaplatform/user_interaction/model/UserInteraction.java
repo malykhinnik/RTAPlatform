@@ -3,11 +3,13 @@ package com.rtaplatform.user_interaction.model;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.io.Serializable;
 
 @Getter
 @Builder
+@ToString
 @EqualsAndHashCode
 public class UserInteraction implements Serializable {
     private Long id;

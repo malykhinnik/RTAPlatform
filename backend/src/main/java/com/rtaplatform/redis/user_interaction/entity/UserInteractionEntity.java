@@ -10,6 +10,7 @@ import java.io.Serializable;
 @RedisHash("user_interaction")
 @Getter
 @Builder
+@ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor

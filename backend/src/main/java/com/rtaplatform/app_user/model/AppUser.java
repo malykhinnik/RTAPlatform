@@ -3,12 +3,14 @@ package com.rtaplatform.app_user.model;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.With;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Builder
+@ToString
 public class AppUser {
     private Long id;
     private LocalDateTime created;

@@ -1,5 +1,7 @@
 #spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
-
+server:
+  tomcat:
+    relaxed-query-chars: [ '{','}' ]
 spring:
   datasource:
     url: "jdbc:postgresql://localhost:5455/test_database"
