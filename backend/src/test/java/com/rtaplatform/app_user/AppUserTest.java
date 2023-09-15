@@ -1,6 +1,6 @@
 package com.rtaplatform.app_user;
 
-import com.rtaplatform.app_user.entity.AppUser;
+import com.rtaplatform.app_user.model.AppUser;
 import org.junit.jupiter.api.Test;
 
 import static com.rtaplatform.app_user.AppUserTestConstants.*;

@@ -1,6 +1,6 @@
 package com.rtaplatform.postgresql.app_user;
 
-import com.rtaplatform.app_user.entity.AppUser;
+import com.rtaplatform.postgresql.app_user.entity.AppUserEntity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,67 +27,68 @@ public class AppAppUserRepositoryTest {
 
     @Test
     public void createNewUser() {
-        final AppUser appUser = AppUser.builder()
+        final AppUserEntity appUserEntity = AppUserEntity.builder()
                 .firstName(USER_FIRST_NAME)
                 .lastName(USER_LAST_NAME)
                 .build();
 
-        final AppUser newAppUser = appUserRepository.save(appUser);
-        assertNotNull(newAppUser.getId());
-        assertNotNull(newAppUser.getCreated());
-        assertNotNull(newAppUser.getUpdated());
-        assertEquals(USER_FIRST_NAME, newAppUser.getFirstName());
-        assertEquals(USER_LAST_NAME, newAppUser.getLastName());
+        final AppUserEntity newAppUserEntity = appUserRepository.save(appUserEntity);
+        assertNotNull(newAppUserEntity.getId());
+        assertNotNull(newAppUserEntity.getCreated());
+        assertNotNull(newAppUserEntity.getUpdated());
+        assertEquals(USER_FIRST_NAME, newAppUserEntity.getFirstName());
+        assertEquals(USER_LAST_NAME, newAppUserEntity.getLastName());
     }
 
     @Test
     public void readUser() {
-        final AppUser appUser = appUserRepository.save(
-                AppUser.builder()
+        final AppUserEntity appUserEntity = appUserRepository.save(
+                AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
 
-        final Optional<AppUser> oFindedUser = appUserRepository.findById(appUser.getId());
+        final Optional<AppUserEntity> oFindedUser = appUserRepository.findById(appUserEntity.getId());
         assertTrue(oFindedUser.isPresent());
-        final AppUser findedUser = oFindedUser.get();
-        assertEquals(appUser.getId(), findedUser.getId());
-        assertEquals(appUser.getCreated(), findedUser.getCreated());
-        assertEquals(appUser.getUpdated(), findedUser.getUpdated());
+        final AppUserEntity findedUser = oFindedUser.get();
+        assertEquals(appUserEntity.getId(), findedUser.getId());
+        assertEquals(appUserEntity.getCreated(), findedUser.getCreated());
+        assertEquals(appUserEntity.getUpdated(), findedUser.getUpdated());
         assertEquals(USER_FIRST_NAME, findedUser.getFirstName());
         assertEquals(USER_LAST_NAME, findedUser.getLastName());
     }
 
     @Test
     public void updateUser() {
-        final AppUser appUser = appUserRepository.save(
-                AppUser.builder()
+        final AppUserEntity appUserEntity = appUserRepository.save(
+                AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
-        final AppUser updatedAppUser = appUserRepository.save(
-                appUser.update(
-                        AppUser.builder()
-                                .firstName(NEW_USER_FIRST_NAME)
-                                .lastName(appUser.getLastName())
-                                .build())
-        );
-        assertEquals(appUser.getId(), updatedAppUser.getId());
-        assertEquals(appUser.getCreated(), updatedAppUser.getCreated());
-        assertTrue(appUser.getUpdated().isBefore(updatedAppUser.getUpdated()));
+        final AppUserEntity updatedAppUser = appUserRepository.save(
+                AppUserEntity.builder()
+                        .id(appUserEntity.getId())
+                        .created(appUserEntity.getCreated())
+                        .updated(appUserEntity.getUpdated())
+                        .firstName(NEW_USER_FIRST_NAME)
+                        .lastName(appUserEntity.getLastName())
+                        .build());
+        assertEquals(appUserEntity.getId(), updatedAppUser.getId());
+        assertEquals(appUserEntity.getCreated(), updatedAppUser.getCreated());
+        assertTrue(appUserEntity.getUpdated().isBefore(updatedAppUser.getUpdated()));
         assertEquals(NEW_USER_FIRST_NAME, updatedAppUser.getFirstName());
         assertEquals(USER_LAST_NAME, updatedAppUser.getLastName());
     }
 
     @Test
     public void deleteUser() {
-        final AppUser appUser = appUserRepository.save(
-                AppUser.builder()
+        final AppUserEntity appUserEntity = appUserRepository.save(
+                AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
-        appUserRepository.deleteById(appUser.getId());
-        final Optional<AppUser> oFindedUser = appUserRepository.findById(appUser.getId());
+        appUserRepository.deleteById(appUserEntity.getId());
+        final Optional<AppUserEntity> oFindedUser = appUserRepository.findById(appUserEntity.getId());
         assertTrue(oFindedUser.isEmpty());
     }
 }

@@ -1,9 +1,9 @@
 package com.rtaplatform.postgresql.app_user;
 
-import com.rtaplatform.app_user.entity.AppUser;
+import com.rtaplatform.postgresql.app_user.entity.AppUserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface AppUserRepository extends CrudRepository<AppUser, Long>, PagingAndSortingRepository<AppUser, Long> {
+public interface AppUserRepository extends CrudRepository<AppUserEntity, Long>, PagingAndSortingRepository<AppUserEntity, Long> {
     boolean existsAppUserByFirstNameAndLastName(final String firstName, final String lastName);
 }

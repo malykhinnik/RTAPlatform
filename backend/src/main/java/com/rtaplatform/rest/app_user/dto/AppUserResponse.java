@@ -1,6 +1,6 @@
 package com.rtaplatform.rest.app_user.dto;
 
-import com.rtaplatform.app_user.entity.AppUser;
+import com.rtaplatform.app_user.model.AppUser;
 import lombok.Builder;
 import lombok.Getter;
 
