@@ -29,7 +29,7 @@ public class KafkaTest {
     public KafkaProducer producer;
 
     @Test
-    public void whenSendingthenMessageReceived() throws InterruptedException {
+    public void whenSendingThenReceived() throws InterruptedException {
         producer.sendMessage(KAFKA_VALID_MESSAGE);
         assertTrue(consumer.getLatch().await(10, TimeUnit.SECONDS));
         final UserInteractionMessage res = consumer.getUserInteractionMessage();

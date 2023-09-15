@@ -4,8 +4,10 @@ import com.rtaplatform.user_interaction.model.UserInteraction;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static com.rtaplatform.utils.DateTimeUtils.getNowTruncatedToMillis;
@@ -23,6 +25,7 @@ public class UserInteractionEntity implements Serializable {
     private String created;
     private String uuid;
     private Long userId;
+    @Indexed
     private Long productId;
     private Integer timeSec;
 
@@ -39,5 +42,16 @@ public class UserInteractionEntity implements Serializable {
 
     private static String computeIfAbsentCreated(UserInteraction model) {
         return Optional.ofNullable(model.getCreated()).orElse(getNowTruncatedToMillis()).toString();
+    }
+
+    public UserInteraction toModel() {
+        return UserInteraction.builder()
+                .id(id)
+                .created(LocalDateTime.parse(created))
+                .uuid(uuid)
+                .userId(userId)
+                .productId(productId)
+                .timeSec(timeSec)
+                .build();
     }
 }

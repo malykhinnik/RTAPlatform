@@ -16,7 +16,7 @@ import org.testcontainers.utility.DockerImageName;
 
 import java.util.Optional;
 
-import static com.rtaplatform.redis.user_interaction.UserInteractionTestConstants.*;
+import static com.rtaplatform.user_interaction.UserInteractionTestUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -24,9 +24,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("redis-test")
 public class UserInteractionEntityRepositoryTest {
     @Container
-    public static final GenericContainer<?> REDIS_CONTAINER =
-            new GenericContainer<>(DockerImageName.parse("redis:7.2.1"))
-                    .withExposedPorts(REDIS_PORT);
+    public static final GenericContainer<?> REDIS_CONTAINER = new GenericContainer<>(DockerImageName.parse("redis:7.2.1"))
+                .withExposedPorts(REDIS_PORT);
+
     @Autowired
     public UserInteractionEntityRepository userInteractionEntityRepository;
 
@@ -47,11 +47,11 @@ public class UserInteractionEntityRepositoryTest {
     }
 
     @Test
-    public void createNewUser() {
+    public void createNewUserInteraction() {
         final UserInteractionEntity userInteractionEntity = UserInteractionEntity.builder()
                 .uuid(UUID)
                 .userId(USER_ID)
-                .productId(PRODUCT_ID)
+                .productId(PRODUCT_ID_1)
                 .timeSec(TIME_SEC)
                 .build();
 
@@ -59,17 +59,17 @@ public class UserInteractionEntityRepositoryTest {
         assertNotNull(newAppUserEntity.getId());
         assertEquals(UUID, newAppUserEntity.getUuid());
         assertEquals(USER_ID, newAppUserEntity.getUserId());
-        assertEquals(PRODUCT_ID, newAppUserEntity.getProductId());
+        assertEquals(PRODUCT_ID_1, newAppUserEntity.getProductId());
         assertEquals(TIME_SEC, newAppUserEntity.getTimeSec());
     }
 
     @Test
-    public void readUser() {
+    public void readUserInteraction() {
         final UserInteractionEntity userInteractionEntity = userInteractionEntityRepository.save(
                 UserInteractionEntity.builder()
                         .uuid(UUID)
                         .userId(USER_ID)
-                        .productId(PRODUCT_ID)
+                        .productId(PRODUCT_ID_1)
                         .timeSec(TIME_SEC)
                         .build());
 
@@ -80,7 +80,17 @@ public class UserInteractionEntityRepositoryTest {
         assertEquals(userInteractionEntity.getCreated(), findedUserInteractionEntity.getCreated());
         assertEquals(UUID, findedUserInteractionEntity.getUuid());
         assertEquals(USER_ID, findedUserInteractionEntity.getUserId());
-        assertEquals(PRODUCT_ID, findedUserInteractionEntity.getProductId());
+        assertEquals(PRODUCT_ID_1, findedUserInteractionEntity.getProductId());
         assertEquals(TIME_SEC, findedUserInteractionEntity.getTimeSec());
+    }
+
+    @Test
+    public void findAllInteractionsByProduct() {
+        LIST_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_1.forEach(uie -> userInteractionEntityRepository.save(uie));
+        assertEquals(N_OF_USERS_BY_PRODUCT_ID_1, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_1).size());
+        assertEquals(0, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_2).size());
+
+        LIST_USER_INTERACTION_ENTITIES_BY_PRODUCT_ID_2.forEach(uie -> userInteractionEntityRepository.save(uie));
+        assertEquals(N_OF_USERS_BY_PRODUCT_ID_2, userInteractionEntityRepository.findAllByProductId(PRODUCT_ID_2).size());
     }
 }
