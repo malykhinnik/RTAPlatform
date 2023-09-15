@@ -4,8 +4,8 @@ import com.rtaplatform.app_user.model.AppUser;
 import lombok.Builder;
 import lombok.Getter;
 
-@Builder
 @Getter
+@Builder
 public class AppUserResponse {
     private final Long Id;
     private final String firstName;

@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @Testcontainers
 @ActiveProfiles("postgresql-test")
-public class AppAppUserRepositoryTest {
+public class AppUserEntityRepositoryTest {
     @Autowired
     AppUserRepository appUserRepository;
 

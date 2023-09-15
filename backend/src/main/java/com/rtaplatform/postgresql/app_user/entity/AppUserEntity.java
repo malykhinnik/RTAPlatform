@@ -9,10 +9,11 @@ import java.time.LocalDateTime;
 
 import static com.rtaplatform.postgresql.PostgreSqlUtils.getDateTimeNowTruncatedToMillis;
 
-@Entity
+
 @Table(name = "app_user")
-@Builder
+@Entity
 @Getter
+@Builder
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor

@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static com.rtaplatform.rest.RestConstants.*;
-import static com.rtaplatform.rest.Utils.createPageRequest;
+import static com.rtaplatform.rest.RestUtils.createPageRequest;
 
 @RestController("app-users")
 @RequestMapping(value = "/app-users")

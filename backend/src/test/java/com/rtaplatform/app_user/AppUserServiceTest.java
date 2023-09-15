@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
-public class AppAppUserServiceTest {
+public class AppUserServiceTest {
     @Mock
     private AppUserRepository appUserRepository;
     private AppUserService appUserService;

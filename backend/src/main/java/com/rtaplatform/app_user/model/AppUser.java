@@ -7,8 +7,8 @@ import lombok.With;
 
 import java.time.LocalDateTime;
 
-@Builder
 @Getter
+@Builder
 public class AppUser {
     private Long id;
     private LocalDateTime created;

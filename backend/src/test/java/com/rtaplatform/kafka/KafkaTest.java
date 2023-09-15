@@ -1,6 +1,6 @@
 package com.rtaplatform.kafka;
 
-import com.rtaplatform.kafka.user_interaction.dto.UserInteractionMessage;
+import com.rtaplatform.kafka.user_interaction.message.UserInteractionMessage;
 import com.rtaplatform.kafka.user_interaction.processing.KafkaConsumer;
 import com.rtaplatform.kafka.user_interaction.produce.KafkaProducer;
 import org.junit.jupiter.api.Test;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 @DirtiesContext
 @EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
+@ActiveProfiles("kafka-test")
 public class KafkaTest {
     @Autowired
     public KafkaConsumer consumer;

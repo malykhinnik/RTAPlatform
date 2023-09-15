@@ -3,7 +3,7 @@ package com.rtaplatform.rest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
-public class Utils {
+public class RestUtils {
     public static PageRequest createPageRequest(final Integer page,
                                                 final Integer size,
                                                 final String sortDir,

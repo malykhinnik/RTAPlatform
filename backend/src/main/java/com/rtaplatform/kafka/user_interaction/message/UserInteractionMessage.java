@@ -1,11 +1,11 @@
-package com.rtaplatform.kafka.user_interaction.dto;
+package com.rtaplatform.kafka.user_interaction.message;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.rtaplatform.user_interaction.entity.UserInteraction;
+import com.rtaplatform.user_interaction.model.UserInteraction;
 import lombok.*;
 
-@Builder
 @Getter
+@Builder
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor

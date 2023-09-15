@@ -1,19 +1,15 @@
-package com.rtaplatform.user_interaction.entity;
+package com.rtaplatform.user_interaction.model;
 
-import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import java.io.Serializable;
 
-@RedisHash("product")
-@Builder
 @Getter
+@Builder
 @EqualsAndHashCode
-@NoArgsConstructor
-@AllArgsConstructor
 public class UserInteraction implements Serializable {
-    @Id
     private Long id;
     private Long created;
     private String uuid;
