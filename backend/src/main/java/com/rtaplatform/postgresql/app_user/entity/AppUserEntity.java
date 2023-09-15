@@ -7,7 +7,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-import static com.rtaplatform.postgresql.PostgreSqlUtils.getDateTimeNowTruncatedToMillis;
+import static com.rtaplatform.utils.DateTimeUtils.getNowTruncatedToMillis;
 
 
 @Table(name = "app_user")
@@ -50,13 +50,13 @@ public class AppUserEntity {
 
     @PrePersist
     private void setCreatedAndUpdatedNow() {
-        created = getDateTimeNowTruncatedToMillis();
-        updated = getDateTimeNowTruncatedToMillis();
+        created = getNowTruncatedToMillis();
+        updated = getNowTruncatedToMillis();
     }
 
     @PreUpdate
     private void setUpdatedNow() {
-        updated = getDateTimeNowTruncatedToMillis();
+        updated = getNowTruncatedToMillis();
     }
 
 }

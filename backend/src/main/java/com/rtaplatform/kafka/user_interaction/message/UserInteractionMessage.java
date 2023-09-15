@@ -1,8 +1,12 @@
 package com.rtaplatform.kafka.user_interaction.message;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.rtaplatform.user_interaction.model.UserInteraction;
+import com.rtaplatform.utils.TimestampUTCToLocalDateTimeDeserializer;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Builder
@@ -11,7 +15,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserInteractionMessage {
-    private Long created;
+    @JsonDeserialize(using = TimestampUTCToLocalDateTimeDeserializer.class)
+    private LocalDateTime created;
     private String uuid;
     @JsonProperty("user_id")
     private Long userId;

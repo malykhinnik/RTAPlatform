@@ -18,11 +18,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("postgresql-test")
 public class AppUserEntityRepositoryTest {
     @Autowired
-    AppUserRepository appUserRepository;
+    AppUserEntityRepository appUserEntityRepository;
 
     @AfterEach
     void clean() {
-        appUserRepository.deleteAll();
+        appUserEntityRepository.deleteAll();
     }
 
     @Test
@@ -32,7 +32,7 @@ public class AppUserEntityRepositoryTest {
                 .lastName(USER_LAST_NAME)
                 .build();
 
-        final AppUserEntity newAppUserEntity = appUserRepository.save(appUserEntity);
+        final AppUserEntity newAppUserEntity = appUserEntityRepository.save(appUserEntity);
         assertNotNull(newAppUserEntity.getId());
         assertNotNull(newAppUserEntity.getCreated());
         assertNotNull(newAppUserEntity.getUpdated());
@@ -42,13 +42,13 @@ public class AppUserEntityRepositoryTest {
 
     @Test
     public void readUser() {
-        final AppUserEntity appUserEntity = appUserRepository.save(
+        final AppUserEntity appUserEntity = appUserEntityRepository.save(
                 AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
 
-        final Optional<AppUserEntity> oFindedUser = appUserRepository.findById(appUserEntity.getId());
+        final Optional<AppUserEntity> oFindedUser = appUserEntityRepository.findById(appUserEntity.getId());
         assertTrue(oFindedUser.isPresent());
         final AppUserEntity findedUser = oFindedUser.get();
         assertEquals(appUserEntity.getId(), findedUser.getId());
@@ -60,12 +60,12 @@ public class AppUserEntityRepositoryTest {
 
     @Test
     public void updateUser() {
-        final AppUserEntity appUserEntity = appUserRepository.save(
+        final AppUserEntity appUserEntity = appUserEntityRepository.save(
                 AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
-        final AppUserEntity updatedAppUser = appUserRepository.save(
+        final AppUserEntity updatedAppUser = appUserEntityRepository.save(
                 AppUserEntity.builder()
                         .id(appUserEntity.getId())
                         .created(appUserEntity.getCreated())
@@ -82,13 +82,13 @@ public class AppUserEntityRepositoryTest {
 
     @Test
     public void deleteUser() {
-        final AppUserEntity appUserEntity = appUserRepository.save(
+        final AppUserEntity appUserEntity = appUserEntityRepository.save(
                 AppUserEntity.builder()
                         .firstName(USER_FIRST_NAME)
                         .lastName(USER_LAST_NAME)
                         .build());
-        appUserRepository.deleteById(appUserEntity.getId());
-        final Optional<AppUserEntity> oFindedUser = appUserRepository.findById(appUserEntity.getId());
+        appUserEntityRepository.deleteById(appUserEntity.getId());
+        final Optional<AppUserEntity> oFindedUser = appUserEntityRepository.findById(appUserEntity.getId());
         assertTrue(oFindedUser.isEmpty());
     }
 }

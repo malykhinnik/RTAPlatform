@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Getter
 @Builder
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class UserInteraction implements Serializable {
     private Long id;
-    private Long created;
+    private LocalDateTime created;
     private String uuid;
     private Long userId;
     private Long productId;
