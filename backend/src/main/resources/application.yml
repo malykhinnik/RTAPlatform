@@ -14,9 +14,13 @@ spring:
   flyway:
     baselineOnMigrate: true
   kafka:
-    bootstrap-servers: "localhost:9092,another-host.com:29092"
+    bootstrap-servers: "localhost:9092"
     topic:
       name: "rtaplatform-kafka-topic"
     consumer:
       auto-offset-reset: earliest
       group-id: "rtaplatform-kafka-consumer"
+#  data:
+#    redis:
+#      host: "127.0.0.1"
+#      port: 6379

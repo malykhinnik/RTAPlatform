@@ -1,13 +1,12 @@
 package com.rtaplatform.redis.user_interaction.entity;
 
 import com.rtaplatform.user_interaction.model.UserInteraction;
-import jakarta.persistence.PrePersist;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static com.rtaplatform.utils.DateTimeUtils.getNowTruncatedToMillis;
 
@@ -21,7 +20,7 @@ import static com.rtaplatform.utils.DateTimeUtils.getNowTruncatedToMillis;
 public class UserInteractionEntity implements Serializable {
     @Id
     private Long id;
-    private LocalDateTime created;
+    private String created;
     private String uuid;
     private Long userId;
     private Long productId;
@@ -30,7 +29,7 @@ public class UserInteractionEntity implements Serializable {
     public static UserInteractionEntity toEntity(UserInteraction model) {
         return UserInteractionEntity.builder()
                 .id(model.getId())
-                .created(model.getCreated())
+                .created(computeIfAbsentCreated(model))
                 .uuid(model.getUuid())
                 .userId(model.getUserId())
                 .productId(model.getProductId())
@@ -38,8 +37,7 @@ public class UserInteractionEntity implements Serializable {
                 .build();
     }
 
-    @PrePersist
-    private void setCreatedAndUpdatedNow() {
-        created = getNowTruncatedToMillis();
+    private static String computeIfAbsentCreated(UserInteraction model) {
+        return Optional.ofNullable(model.getCreated()).orElse(getNowTruncatedToMillis()).toString();
     }
 }

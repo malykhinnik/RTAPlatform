@@ -7,8 +7,9 @@ spring:
     hibernate:
       ddl-auto: none
   flyway:
-    baselineOnMigrate: true
+    baselineOnMigrate: false
   kafka:
+    bootstrap-servers: "localhost:9092"
     topic:
       name: "rtaplatform-kafka-topic"
     consumer:

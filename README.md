@@ -38,7 +38,9 @@ and product information.</br>
 8. I don't think about any PostgreSQL optimization because good indexing or partitioning needs actual data and user experience.
 9. I implemented a DB constraint on the Java level for more flexibility. But it can be duplicated or moved to the DB side in the future.
 10. I will guess what we use only one timezone and I can save a data without timezone
-11. I add persistence property to busines entity for now, but in the future will be better separate business and db logic 
+11. I add persistence property to busines entity for now, but in the future will be better separate business and db logic
+12. Test containers run as is without optimization by resouces
+13. Error hendling 
 
 # Test Run Requirements:
 1. For some tests, it will be necessary to pre-install docker. You can find [How to install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) on the official site.  

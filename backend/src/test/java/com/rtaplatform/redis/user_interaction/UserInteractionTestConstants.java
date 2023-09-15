@@ -5,4 +5,5 @@ public class UserInteractionTestConstants {
     public static final Long USER_ID = 1L;
     public static final Long PRODUCT_ID = 1L;
     public static final Integer TIME_SEC = 60;
+    public static final Integer REDIS_PORT = 6379;
 }

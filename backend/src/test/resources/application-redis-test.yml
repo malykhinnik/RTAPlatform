@@ -7,13 +7,4 @@ spring:
     hibernate:
       ddl-auto: none
   flyway:
-    baselineOnMigrate: true
-  kafka:
-    topic:
-      name: "rtaplatform-kafka-topic"
-    consumer:
-      auto-offset-reset: earliest
-      group-id: "rtaplatform-kafka-consumer"
-#  redis:
-#    host: "127.0.0.1"
-#    port: 6379
+    baselineOnMigrate: false
